@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+<link rel="stylesheet" type="text/css" href="src/elementarybars_v3.css">
+<title>C'est La Vis</title>
+
+<script type="text/javascript"> 
+
+            var _gaq = _gaq || [];
+
+            _gaq.push(['_setAccount', 'UA-56538-1']);
+
+            (function() {
+
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+
+            })();
+
+        </script>
+
+
+<script src="d3/d3.min.js"></script>
+<script type="text/javascript" src="colorThief/colorThief.js"></script>
+<!--
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+-->
+
+
+
+<script src="jquery/jquery-1.7.1.min.js"></script>
+<script src="jquery/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css">
+
+
+<script src="jquery/jquery.address-1.5.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+
+
+</head>
+
+
+<body onselectstart="return false">
+
+<div class="capsul" id="header" style="margin:0px;">
+	<h1>C'est La Vis</h1>
+</div>
+
+
+
+<!--
+<div>
+	<h1 id="title"></h1>
+    <div id="content"></div>
+</div>
+-->
+   
+
+
+
+<div class="capsul clearfix" id="intro">
+
+	<div> <!-- class="" style="float: left; width: 200px;"> -->
+  	
+	    <h1 class="whitetext">Select Material</h1> <!--<br>-->
+	    <label>
+	  	<input type="radio" class="load-content" onClick="updateSelections('material1')" name="material" value="material1" checked/>
+	    <img src="images/materialthumbs1/material1.png" height="70" border="5">
+	    </label>
+	    &nbsp;&nbsp;
+	    
+	    <label>
+	  	<input type="radio" class="load-content" onClick="updateSelections('material2')" name="material" value="material2"/>
+	    <img src="images/materialthumbs1/material2.png" height="70" border="5">
+	    </label>
+	    <br><!--<br>-->
+	    
+	    
+	    <label>
+	  	<input type="radio" class="load-content" onClick="updateSelections('material3')" name="material" value="material3"/>
+	    <img src="images/materialthumbs1/material3.png" height="70" border="5">
+	    </label>
+	    &nbsp;&nbsp;
+	    
+	    <label>
+	  	<input type="radio" class="load-content" onClick="updateSelections('material4')" name="material" value="material4"/>
+	    <img src="images/materialthumbs1/material4.png" height="70" border="5">
+	    </label>
+	    <br><!--<br>-->
+	    
+	    
+	    <label>
+	  	<input type="radio" class="load-content" onClick="updateSelections('material5')" name="material" value="material5"/>
+	    <img src="images/materialthumbs1/material5.png" height="70" border="5">
+	    </label>
+	    &nbsp;&nbsp;
+	    
+	    <label>
+	  	<input type="radio" class="load-content" onClick="updateSelections('material6')" name="material" value="material6"/>
+	    <img src="images/materialthumbs1/material6.png" height="70" border="5">
+	    </label>
+	</div>
+  
+  
+  
+  <div> <!-- class="table-container" style="float: left; width: 405px;"> -->
+  		<h1 class="whitetext">Enter Data</h1> <!--<br>-->
+        <div style="margin: auto;">
+        	<table class="datatable" id="inputtable" border="0"></table>						 
+        </div>
+  </div>
+  
+  
+  
+  
+  <div id="options-settings"> <!-- style="height:350px;">-->
+		<h1 class="whitetext">Set Options</h1> <!--<br>-->
+		<input type="checkbox"  id="enableedits" value="enableedits" onclick='enableAddRemove(this);' checked/>
+		<label for="enableedits"><span></span>Add/Remove Elements</label>
+		<br/>
+	
+		<input type="checkbox"  id="showtable" value="showtable" onclick='ifShowTable(this);' checked/>
+		<label for="showtable"><span></span>Show Data Table</label>
+		<br/>
+		<!--
+		<input type="checkbox"  id="showbg" value="showbg" onclick='adjustBg(this);' checked/>
+		<label for="showbg"><span></span>Display Background</label>
+		<br/>
+		-->
+		<input type="checkbox"  id="shuffle" value="shuffle" onclick='shuffleTable(this);'/>
+		<label for="shuffle"><span></span>Shuffle Table</label>
+		<br/>
+		
+		<span id="checkdetach">
+		<input type="checkbox"  id="detach" value="detach" onclick='detachViews(this);'/>
+		<label for="detach"><span></span>Detach Views</label>
+		
+		</span>
+		<br/>
+		
+		<!--
+		<input type="checkbox"  id="showgrid" value="showgrid" onclick='setGridVisibility(this);' checked/>
+		<label for="showgrid"><span></span>Display Grid</label>
+		<br/>
+		-->
+		<input type="number" min="1" max="5" maxlength="2" size="10"  value="1" id="tickoptions" onchange="setTickCount()"/>&nbsp;&nbsp;Y Axis Ticks
+		<br>
+		
+		Each  element represents:&nbsp;
+		<input type="number" id="elementcount" min="1" max="5" maxlength="2" size="25"  value="1" onchange="adjustCount()"/>
+		<br>
+				 
+		<br>
+		<textarea id="textinput" style=" width:100%;" rows="5">Enter your textual description here.</textarea>
+ </div>
+	
+	
+	
+	
+</div> <!-- end of intro div -->
+
+
+<div class="capsul" id="maindiv" >
+
+	
+		
+		<div id="viewselection" style= " width=100%;">
+				<div class="preview-title-container">
+					<h1 class="whitetext">Preview</h1> <!--<br>-->
+				</div>
+				
+				<div id="spacer">&nbsp;</div>
+				
+				<div id="ref-steps" style="display: inline-block;"> 
+				
+				<div class="viewstate-container">
+					<img class="viewstate" id="scatter_state" src= "images/smallicons/scatter.png"> <!--"images/scatter-v2.png"> -->
+					<!--&nbsp;&nbsp;&nbsp;-->
+				</div>
+				<div class="viewstate-container">
+					<img class="viewstate" id="cluster_state" src="images/smallicons/cluster.png" > <!--images/cluster-v2.png> -->
+					<!--&nbsp;&nbsp;&nbsp;-->
+				</div>
+				<div class="viewstate-container">
+					<img class="viewstate" id="stack_state" src="images/smallicons/stack.png">
+					<!--&nbsp;&nbsp;&nbsp;-->
+				</div>
+				<div class="viewstate-container">
+					<img class="viewstate" id="tally_state" src="images/smallicons/tally.png">
+					<!--&nbsp;&nbsp;&nbsp;-->
+				</div>
+				<div class="viewstate-container">
+					<img class="viewstate" id="bar_state" src="images/smallicons/bar.png">
+				</div>
+				<div id="slider-range"> </div>
+				
+				</div>
+		</div>
+		
+		
+		<div id="preview-exercises">
+			<div id="entername" style="float: left;"> </div>
+			<div id="exercises" style="float: left;"> </div>
+			<div id="nxtbtn">&nbsp; &nbsp; <button id="nextbutton" type="button" onclick="clickNext();"></button> </div>
+		
+		</div>
+	
+		
+		<div id="preview-col-1"> 	
+			<div id="contain_finaltable"> 
+			  <!--<br>-->
+			  <table class="datatable" id="finaltable" border="0"></table> 
+			</div>
+			<div id="legend" style="visibility:hidden">Each shape represents 1 item.</div>
+			<div class="descriptions-container">
+			  	<p class="description" id="description">descriptions</p>
+			  	<p class="description" id="description2" style=" display:none;">descriptions2</p>
+			</div>
+
+		</div>
+		
+			
+			
+		
+		<div id="preview-col-vis">	  
+			<div class="container" id="contain_vis1" style="float: left; width:100%;">
+				  	<div class ="pane" id="vis1" ></div>
+			</div>
+				  
+		    <div class="container" id="contain_vis2" style="float:left; width:100%; ">
+				  	<div class ="pane" id="vis2"></div>
+				  	<!--<br>
+				  	<div id="description2" style=" display:none; width:100%;">descriptions2</div>-->
+			</div>
+
+			<div class="publish">
+			    <input class="btn" type="button" id ="record" value="Record" onclick="record();"<br><br><br>
+				<input class="btn" type="button" id ="publish" value="Publish" onclick="publishViews();" /> <br>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+</div>
+
+
+<script>
+
+
+
+var width = 550;
+var height = 750;
+
+var themelevel = 1;  //level1 is with earlier themes
+
+var svg_pane0 = d3.select("#selection").append("svg");
+var svg_dummy = d3.select("body").append("svg")
+	.attr('class', 'svg-dummy');
+
+var svg_pane1 = d3.select("#vis1").append("svg")
+	.attr("id", "pane1")
+    .attr("width", width)
+    .attr("height", height);
+    
+    
+var outerGroup1 = svg_pane1.append("g")
+				.attr("id", "outer1g");
+				
+var pane1g = outerGroup1.append("g")
+				.attr("id", "pane1g");
+    
+
+var svg_pane2 = d3.select("#vis2").append("svg")
+	.attr("id", "pane2")
+    .attr("width", width)
+    .attr("height", height);
+
+var outerGroup2 = svg_pane2.append("g")
+					.attr("id", "outer2g");
+
+var pane2g = outerGroup2.append("g")
+				.attr("id", "pane2g");
+   
+    
+
+
+var mousedragx;
+var mousedragy; 
+
+
+var drag = d3.behavior.drag() 
+	.origin(function() { 
+		var t = d3.select(this);
+        return {x: t.attr("x"), y: t.attr("y")};
+	
+	})
+	.on("dragstart", function(d){
+		dragging = true;    	
+	})
+    .on("drag", function(d){
+    
+    	d3.event.sourceEvent.stopPropagation(); 
+    
+    
+    	if (d3.event.defaultPrevented) 
+    		return;
+    		
+    	mousedragx = d3.event.x;
+    	mousedragy = d3.event.y;
+    	
+    	var panelid = d3.select(this).attr("panel");
+    	var pn = d3.select('#'+panelid);
+    	var currentView = pn.attr("currentView");
+    	
+    	var obj = d3.select(this);
+    	
+    	material.highlightItem(pn, obj.attr("index"), obj.attr("class"));
+    	
+    	if(currentView == "scatter" || currentView == "cluster"){  
+    	    
+			d3.select(this) 
+				.attr("x", d.x= Math.max(0, Math.min(width - 100, mousedragx)))
+				.attr("y", d.y= Math.max(0, Math.min(height - 150, mousedragy)));
+				
+				
+			if(currentView == "scatter"){
+				obj.attr("scatterx", obj.attr("x"));
+				obj.attr("scattery", obj.attr("y"));
+			}
+			else if(currentView == "cluster"){
+				obj.attr("clusterx", obj.attr("x"));
+				obj.attr("clustery", obj.attr("y"));	
+			}	
+		}
+		
+		
+    })
+    .on("dragend", function(d){
+    	dragging = false;
+    	
+    });
+    
+var isSwiped = false; 
+   
+var limiteddrag = d3.behavior.drag()
+	.on("dragstart", function(d){
+		dragging = true;
+	})
+    .on("drag", function(d){
+    	
+    	if(! material.isAddRemove)
+    		return;
+    		
+    		
+    	d3.event.sourceEvent.stopPropagation(); 
+    	
+    	//mousedragx = Math.min( width+320, Math.max(0, d3.event.x));
+    	
+    	
+    	
+    	
+    	
+    	var panelid = d3.select(this).attr("panel");
+    	var classname = d3.select(this).attr("id");
+    	var panel = d3.select('#'+panelid);
+    	
+    	
+    	//console.log(d3.event.dy);
+    	
+    	if(d3.event.dy < -1 && !isSwiped ){
+    		var groupIndex = material.groupIndx(classname);
+			var thegroup = material.groups[groupIndex];
+			thegroup.populate(true);
+			isSwiped = true;
+		}
+		else if(d3.event.dy > 1 && !isSwiped){
+			var groupIndex = material.groupIndx(classname);
+			var thegroup = material.groups[groupIndex];
+			thegroup.populate(false);
+			isSwiped = true;
+		}
+    	
+    	
+    	
+    	/*if(panel.attr("currentView") == "cluster" || panel.attr("currentView") == "scatter")
+    	{
+    	 	//console.log("is here");
+			
+		}
+		else{
+		
+			d3.select(this).attr("x", mousedragx);
+			
+			for(var g=0; g<material.groups.length; g++){
+				 panel.selectAll('.'+classname)
+					.attr("x", mousedragx);
+				
+				panel.selectAll('.'+classname+'_button')
+					.attr("x", mousedragx+15);
+					
+			}
+		}*/
+  		
+    })
+    .on("dragend", function(d){
+		dragging = false;
+		isSwiped = false;
+	});
+
+
+</script>
+
+
+<script>
+  $(function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 4,
+      values: [ 0, 4],
+      step:1,
+      stop: function( event, ui ) {
+        var theviews = ["scatter", "cluster", "stack", "tally", "bar"];
+        var view1 = theviews[ui.values[ 0 ]];
+        var view2 = theviews[ui.values[ 1 ]];
+        
+        //console.log(view1, view2);
+        switchView(view1, view2);
+        
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  });
+</script>
+
+
+
+  
+
+<script type="text/javascript" src="src/common.js"></script>
+<script type="text/javascript" src="src/animationControls.js"></script>
+<script type="text/javascript" src="src/Group.js"></script>
+<script type="text/javascript" src="src/Material.js"></script>
+<script type="text/javascript" src="src/Cat.js"></script>
+<script type="text/javascript" src="src/Scale.js"></script>
+<script type="text/javascript" src="src/input.js"></script>
+<script type="text/javascript" src="src/inputtable.js"></script>
+<script type="text/javascript" src="src/history.js"></script> 
+
+
+
+
+
+
+
+
+
+
+
+

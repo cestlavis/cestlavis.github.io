@@ -1,0 +1,45 @@
+install chrome
+chrome://flags  
+	> disable pinch zoom
+	> disable overscrolling (history navigation)
+
+-- install to run local
+sync with dropbox 
+	> folder: vis at school-app src 
+install git bash
+install node.js
+in bash 
+	>npm install http-server -g
+
+-- run local
+in bash 
+	> cd vis at school-app src
+	> http-server 
+in chrome: 
+	> localhost:8080
+
+
+-- surface kiosk mode
+
+win 8.1 enterprise
+log on admin account
+go to user accounts
+connect admin account to microsoft account
+create local account (select child account) 
+log on local child account
+	make sure chrome is default website
+	make url default page
+
+restrict website access:
+	log on admin account
+	go to user accounts
+	access family satefy website 
+	select child account and set the list of website accessible
+
+kiosk mode
+	log on admin account
+	go to user accounts
+	setup assigned access acount 
+	select child account
+	if you do not see google chrome in the list of app for assigned access: reboot...
+	

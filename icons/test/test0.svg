@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A3D165;}
+	.st1{fill:#A3D165;stroke:#FF931E;stroke-width:6;stroke-miterlimit:10;}
+	.st2{fill:#FBB03B;}
+	.st3{fill:#F15A24;}
+</style>
+<g>
+	<path class="st0" d="M196.5,175.9C196.5,175.9,196.5,175.8,196.5,175.9c7.1-17.4-1.6-48.2-19.4-69s-37.9-23.6-45-6.3
+		c0,0,0,0.1,0,0.1L196.5,175.9z"/>
+	<path class="st0" d="M193.7,16.1C193.7,16.1,193.7,16.1,193.7,16.1c7.7,16.4,0.2,48.3-16.8,71.5s-37,28.8-44.6,12.5
+		c0,0,0-0.1,0-0.1L193.7,16.1z"/>
+</g>
+<path class="st1" d="M142.7,94.8c-0.4,39-31.9,70.2-70.4,69.7c-38.5-0.5-69.4-32.6-69-71.6s31.9-70.2,70.4-69.7
+	S143.1,55.8,142.7,94.8z"/>
+<g>
+	<polygon class="st2" points="37.6,61.2 25.9,48.9 37.9,36.8 49.6,49.1 	"/>
+	<polygon class="st2" points="62.3,61.5 50.6,49.1 62.6,37 74.3,49.3 	"/>
+	<polygon class="st2" points="86.1,61.6 74.3,49.3 86.4,37.2 98.1,49.5 	"/>
+	<polygon class="st2" points="110.8,61.9 99,49.5 111.1,37.4 122.8,49.7 	"/>
+	<polygon class="st2" points="110.4,90.6 98.7,78.2 110.7,66.1 122.5,78.4 	"/>
+	<polygon class="st2" points="109.1,119.3 97.4,106.9 109.4,94.8 121.2,107.1 	"/>
+	<polygon class="st2" points="36.5,147.2 24.8,134.9 36.8,122.8 48.6,135.1 	"/>
+	<polygon class="st2" points="61.3,147.5 49.5,135.1 61.6,123 73.3,135.3 	"/>
+	<polygon class="st2" points="85,147.6 73.3,135.3 85.3,123.2 97.1,135.5 	"/>
+	<polygon class="st2" points="108.8,147.8 97.1,135.5 109.1,123.4 120.8,135.7 	"/>
+	<polygon class="st2" points="37.3,90 25.5,77.6 37.6,65.5 49.3,77.8 	"/>
+	<polygon class="st2" points="62,90.2 50.2,77.8 62.3,65.7 74,78 	"/>
+	<polygon class="st2" points="85.7,90.4 74,78 86,65.9 97.8,78.2 	"/>
+	<polygon class="st2" points="36.9,118.7 25.2,106.3 37.2,94.2 48.9,106.5 	"/>
+	<polygon class="st2" points="61.6,118.9 49.9,106.5 61.9,94.4 73.6,106.7 	"/>
+	<polygon class="st2" points="85.4,119.1 73.6,106.7 85.7,94.6 97.4,106.9 	"/>
+</g>
+<polygon class="st3" points="37.3,90 24.9,78.2 37.6,66.8 50,78.5 "/>
+<path d="M42.1,77.8c0,4.5-2.2,8.1-4.9,8.1s-4.8-3.7-4.7-8.2c0-4.5,2.2-8.1,4.9-8.1C40.1,69.7,42.2,73.3,42.1,77.8z"/>
+</svg>
