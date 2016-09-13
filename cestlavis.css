@@ -1,0 +1,129 @@
+@font-face {
+  font-family: raleway;
+  src: url(docs/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: ralewaybold;
+  src: url(docs/Raleway-Medium.ttf);
+}
+
+
+body {
+  /*font-family: 'OpenSans', Helvetica, Arial, sans-serif;*/
+  font-family: raleway;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  line-height: 200%;
+  background-image: url("docs/bg.jpg");
+}
+
+#header{
+	/*padding-left: 40px; */
+}
+
+.field{
+	padding: 20px; 
+	margin-right: 20px;
+
+}
+.largefont{
+	font-size: 150%;
+}
+
+#app{
+	background-color: rgba(255, 255, 255, .8); 
+	width: 230px;
+	height: 200px;
+	
+}
+
+#survey{
+    
+	background-color: rgba(255, 255, 255, .8); 
+	width: 300px;
+	height: 200px;
+}
+
+#videos{
+	background-color: rgba(255, 255, 255, .8); 
+	width: 300px;
+	height: 200px;
+}
+
+#study{
+	background-color: rgba(255, 255, 255, .8);
+	width:950px;
+	height: 300px;
+	
+}
+
+.smalltext{
+	font-size: 70%;
+	line-height: 120%;
+	display:inline-block;
+}
+
+
+
+#containall{
+	overflow: hidden;
+	margin: 0 0 20px 0;
+
+}
+
+#ex{
+	margin: 0 40px 0 0;
+	height: 300px;
+}
+
+/* unvisited link */
+a:link {
+	font-family: ralewaybold;
+    color: gray;
+}
+
+/* visited link */
+a:visited {
+    color: gray;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 5px;
+    text-align: center;
+    font-size: 70%;
+    line-height: 110%;
+}
+
+
+
